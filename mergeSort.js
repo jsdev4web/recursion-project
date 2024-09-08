@@ -1,9 +1,10 @@
 
 let arr = [3, 2, 1, 13, 8, 5, 0, 1]
 
+//main function
 function mergeSort(arr){
 
-
+    //initial split in half code
     let splitRight = [];
     let splitLeft = [];
 
@@ -18,9 +19,9 @@ function mergeSort(arr){
 
 mergeSort(arr)
 
-
+// driver function
 function mergeHelper(left, right){
-
+    //can i use the above arrays? YES
     console.log(left)
     console.log(right)
 
@@ -28,6 +29,7 @@ function mergeHelper(left, right){
      //console.log(leftSplit1)
 
 
+     //this functions chunks arrays into single array
      let chunks = function(arr, size){
         let results = [];
         while(arr.length){
@@ -41,11 +43,9 @@ function mergeHelper(left, right){
      //leftSplit2 = left.slice(left.length / 2)
      //console.log(leftSplit2)
     
-    
+    //single arrays in order
     let leftSide = chunks(left, 1)
-     
      leftSide.sort(function(a,b){return a-b})
-
      console.log(leftSide)
 
 
@@ -55,9 +55,11 @@ function mergeHelper(left, right){
 
      // right side
 
-     let rightSide = chunks(right, 1)
-     
+     //single arrays here in order
+     let rightSide = chunks(right, 1)     
      rightSide.sort(function(a,b){return a-b})
+     console.log(rightSide)
+
 
      let mergedR = [].concat(...rightSide)
 
